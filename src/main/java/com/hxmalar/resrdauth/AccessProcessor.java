@@ -5,7 +5,7 @@ import javax.ws.rs.core.Response;
 import java.util.Base64;
 
 public class AccessProcessor {
-    protected static Response gatewayAccess(String authorization, DatabaseBridge databaseBridge) {
+    protected static Response gatewayAccess(String authorization, IDatabaseBridge databaseBridge) {
         if (authorization == null) {
             return Response.status(401).entity("No authorization provided.").type(MediaType.TEXT_PLAIN).build();
         }

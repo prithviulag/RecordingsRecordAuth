@@ -16,7 +16,7 @@ public class AuthResource {
     public Response verify(@HeaderParam("Authorization") String authorization, @PathParam("username") String username) {
         String verifyMessage = "Received username for verification: " + username + ". Requested by: " + authorization + ".";
         System.out.println(verifyMessage);
-        DatabaseBridge getUserInfo = (input) -> DatabaseQuerier.getUserInfo(input);
+        IDatabaseBridge getUserInfo = (input) -> DatabaseQuerier.getUserInfo(input);
         return AccessProcessor.gatewayAccess(authorization, getUserInfo);
         //eventually connect to SQLite Database and return data
     }
