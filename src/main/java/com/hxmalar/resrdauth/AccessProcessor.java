@@ -5,7 +5,7 @@ import javax.ws.rs.core.Response;
 import java.util.Base64;
 
 public class AccessProcessor {
-    protected static Response gatewayAccess(String authorization, IDatabaseBridge databaseBridge) {
+    protected static Response gatewayAccess(String authorization, IDatabaseBridge databaseBridge, String input) {
         if (authorization == null) {
             return Response.status(401).entity("No authorization provided.").type(MediaType.TEXT_PLAIN).build();
         }
@@ -14,7 +14,8 @@ public class AccessProcessor {
             String credentials = new String(Base64.getDecoder().decode(authComponents[1]));
             String[] credComponents = credentials.split(":", 2);
             if (credComponents.length == 2) {
-                return databaseBridge.accessDatabase(credComponents[0]);
+                //validate the credentials here
+                return databaseBridge.accessDatabase(input);
             }
             else {
                 return Response.status(401).build();

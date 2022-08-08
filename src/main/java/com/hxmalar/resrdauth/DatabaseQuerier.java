@@ -5,6 +5,6 @@ import javax.ws.rs.core.Response;
 
 public class DatabaseQuerier {
     public static Response getUserInfo(String username) {
-        return Response.ok().entity("Successfully logged in verifier " + username + ".").type(MediaType.TEXT_PLAIN).build();
+        return Response.ok().entity("Successfully accessed database to verify login for user " + username + ".").type(MediaType.TEXT_PLAIN).build();
     }
 }

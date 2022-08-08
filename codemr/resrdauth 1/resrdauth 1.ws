@@ -1,0 +1,1 @@
+{"resrdauth":{"name":"resrdauth","packages":{"com.hxmalar.resrdauth":{"packageName":"com.hxmalar.resrdauth","isAll":false,"classes":["Lcom.hxmalar.resrdauth.AuthResource","Lcom.hxmalar.resrdauth.IDatabaseBridge","Lcom.hxmalar.resrdauth.AuthApplication","Lcom.hxmalar.resrdauth.DatabaseQuerier","Lcom.hxmalar.resrdauth.AccessProcessor"]}}}}
